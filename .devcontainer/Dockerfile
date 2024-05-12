@@ -30,8 +30,8 @@ ENV PATH="/opt/miniconda/bin:${PATH}"
 RUN conda create -n torch_render python==3.8 -y && \
     echo ". activate torch_render" >> ~/.bashrc
 
-RUN . activate torch_render && pip install -U torch matplotlib numpy pandas scipy && \
-conda install ipykernel
+RUN . activate torch_render && pip install -U torch matplotlib==3.3.4 numpy pandas scipy tqdm && \
+conda install ipykernel ffmpeg
 
     
 CMD ["/bin/bash"]
